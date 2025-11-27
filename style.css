@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif, Verdana;
     margin: 0;
@@ -36,7 +39,7 @@ header img {
     border-radius: 5px;
     font-weight: bold;
 }
-section {
+div {
     padding: 50px 20px;
     max-width: 1200px;
     margin: auto;
@@ -71,6 +74,12 @@ img {
   bottom: 10px;
   width: 100%;
   text-align: center;
+}
+.text h1 {
+    font-size: 2.5em;
+}
+.text p {
+    font-size: 1.2em;
 }
 
 /* Number text (1/3 etc) 
