@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif, Verdana;
     margin: 0;
     padding: 0;
     background-color: #fff;
@@ -17,7 +17,7 @@ header img {
     height: 50px;
 }
 .hero {
-    /*background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.jpg') no-repeat center center/cover;*/
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 80px 20px;
@@ -46,10 +46,14 @@ section {
     margin-bottom: 20px;
 }
 /*for the slideshow*/
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
+/* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}*/
+.mySlides {
+    display: none;
+}
+img {
+    vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -64,7 +68,7 @@ img {vertical-align: middle;}
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 10px;
   width: 100%;
   text-align: center;
 }
