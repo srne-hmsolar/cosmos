@@ -14,12 +14,13 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: Arial, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #fff;
   color: #000;
+  overflow-x: hidden;  /* prevents horizontal scroll */
 }
 
 header {
@@ -32,7 +33,7 @@ header {
 }
 
 header img {
-  height: 50px;
+  height: 45px;
 }
 
 .hero {
@@ -68,21 +69,77 @@ section, div {
 }
 
 /* Slideshow */
-.mySlides {
-  display: none;
-}
-
 img {
   vertical-align: middle;
 }
 
 .slideshow-container {
-  max-width: 1000px;
+  width: 100vw;      /* full screen width */
+  max-width: 100%;   /* override previous limit */
   position: relative;
-  margin: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+.mySlides img {
+  width: 100%;       /* full container width */
+  height: 45vh;      /* optional: makes it hero-sized */
+  object-fit: cover; /* prevents distortion, crops neatly */
+  display: block;
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.image-row img {
+  width: 230px;        /* keeps images uniform */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.product-card {
+  width: 230px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-title {
+  font-weight: bold;
+  margin: 8px 0 4px 0;
+  font-size: 1.1em;
+}
+
+.product-desc {
+  font-size: 0.9em;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
 }
 
 .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
@@ -155,39 +212,41 @@ footer {
     <img src="solar_home.svg" style="width:100%" alt="Solar Home">
     <div class="text">
       <h1>Reliable Power, Real Savings</h1>
-      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p>
-      <a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a>
-    </div>
+      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p></div>
+      <div class="btn"><a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a></div>
+    
   </div>
 
   <div class="mySlides fade">
     <img src="solar_installation.svg" style="width:100%" alt="Solar Installation">
     <div class="text">
       <h1>Reliable Power, Real Savings</h1>
-      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p>
-      <a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a>
-    </div>
+      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p></div>
+    <div class="btn"><a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a></div>
+    
   </div>
 
   <div class="mySlides fade">
     <img src="solar_installer.svg" style="width:100%" alt="Solar Installer">
     <div class="text">
       <h1>Reliable Power, Real Savings</h1>
-      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p>
-      <a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a>
-    </div>
+      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p></div>
+      <div class="btn"><a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a></div>
+    
   </div>
 </div>
 
+<!--
 <div style="text-align:center;margin-top:10px">
   <span class="dot"></span>
   <span class="dot"></span>
   <span class="dot"></span>
 </div>
+-->
 
 <!-- Problem Section -->
 <div class="problem">
-  <h2>Tired of blackouts & weak solar systems?</h2>
+  <h2>Tired of blackouts and weak solar systems?</h2>
   <p>Systems that fail early, can’t run appliances, or come with poor support – we know the frustration.</p>
 </div>
 
@@ -198,18 +257,201 @@ footer {
 </div>
 
 <!-- Products Section -->
-<div class="products">
-  <h2>Our Products</h2>
-  <div class="products-grid">
-    <div><img src="srne-inverter.jpg" alt="SRNE Hybrid Inverter"><p>Hybrid Inverters</p></div>
-    <div><img src="srne-lithium.jpg" alt="SRNE Lithium Battery"><p>Lithium Batteries</p></div>
-    <div><img src="srne-controller.jpg" alt="SRNE Charge Controller"><p>Charge Controllers</p></div>
-    <div><img src="solar-panels.jpg" alt="Solar Panel"><p>Solar Panels</p></div>
-    <div><img src="solar-fan.jpg" alt="Solar Fan"><p>Rechargeable Fans</p></div>
-    <div><img src="solar-street-light.jpg" alt="Street Light"><p>Street Lights</p></div>
-  </div>
-</div>
+<section>
+  <h2 class="center">Our Products</h2>
 
+  <!-- INVERTERS -->
+  <h4>Hybrid Inverters (1.5KW - 12KW, Single-phase & 3-phase)</h4>
+	<p>All our inverters can be monitored remotely, are hybrid (designed with inbuilt solar charge controller), 
+		and can be scaled up by 6units (except for the non-parallel models).
+		They are also compatible with tubular batteries and lithium batteries of other brands.
+	</p>
+  <div class="image-row">
+
+    <div class="product-card">
+      <img src="srne-inverter.jpg" alt="HESP Hybrid Inverter">
+      <p class="product-title">HESP Series (6KW/12KW)</p>
+      <p class="product-desc">5-year warranty, offgrid, weatherproof inverter, designed for heavy-duty performance. Available in single-phase & 3-phase.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="asp-series.jpg" alt="ASP inverter">
+      <p class="product-title">ASP Series (10KW/12KW)</p>
+      <p class="product-desc">Offgrid, indoor inverter. Available in single-phase and 3-phase.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="hyp-series.jpg" alt="HYP inverter">
+      <p class="product-title">HYP 5KW Model</p>
+      <p class="product-desc">High PV capacity with 100A inbuilt MPPT.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="hyp6.jpg" alt="HYP 6 inverter">
+      <p class="product-title">HYP 6KW Model</p>
+      <p class="product-desc">High PV capacity with dual inbuilt MPPT.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="hf-series.jpg" alt="HF inverter">
+      <p class="product-title">HF Series</p>
+      <p class="product-desc">Comes in 12V 1.5KW, 24V 3KW, 24V/48V 3.3KW and 48V 5KW.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="afp-series.jpg" alt="AFP inverter">
+      <p class="product-title">AFP Series</p>
+      <p class="product-desc">High PV capacity up to 7500W with 100A inbuilt MPPT.</p>
+    </div>
+
+  </div>
+
+  <!-- LITHIUM BATTERIES 10-YEAR WARRANTY -->
+  <h4>Lithium Batteries (10-Year Warranty)</h4>
+	<p>All our batteries are lithium type, 51.2V (except where specified otherwise), 
+		and can be scaled up by 16units (except for the 12V/24V batteries).
+		They are also compatible with inverters of other brands.
+	</p>
+  <div class="image-row">
+
+    <div class="product-card">
+      <img src="srne-lithium.jpg" alt="10kWh lithium battery">
+      <p class="product-title">EOS10B (10kWh)</p>
+      <p class="product-desc">Safe, durable, optimized storage.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="eos15b.jpg" alt="16kWh lithium battery">
+      <p class="product-title">EOS15B (16.07kWh)</p>
+      <p class="product-desc">Ultra-long life with fast charging.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="eos05b.jpg" alt="5kWh lithium battery">
+      <p class="product-title">EOS05B (5.12kWh)</p>
+      <p class="product-desc">Great for small to mid appliance load.</p>
+    </div>
+
+  </div>
+
+  <!-- LITHIUM BATTERIES 5-YEAR WARRANTY -->
+  <h4>Lithium Batteries (5-Year Warranty)</h4>
+  <div class="image-row">
+
+    <div class="product-card">
+      <img src="se16b-pro.jpg" alt="SE 16KWh lithium battery">
+      <p class="product-title">SE16B-Pro (16.07kWh)</p>
+      <p class="product-desc">Premium battery with intelligent BMS.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="se15b.jpg" alt="SE 15kWh lithium battery">
+      <p class="product-title">SE15B (14.33kWh)</p>
+      <p class="product-desc">Stable long-hour backup storage.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="se10b.jpg" alt="SE 10/5KWh lithium battery">
+      <p class="product-title">SE10B (10.54kWh) & SE05B (5.12kWh)</p>
+      <p class="product-desc">Engineered for efficiency and safety.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="eos08b.jpg" alt="8kWh lithium battery">
+      <p class="product-title">EOS08B (7.16kWh)</p>
+      <p class="product-desc">Built for reliable daily cycling. Parallel up to 4units.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="eoc05b.jpg" alt="5kWh lithium battery">
+      <p class="product-title">EOC05B (5.12kWh)</p>
+      <p class="product-desc">Cost-effective, resilient, rack-stack energy storage.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="eos02b.jpg" alt="2.56kWh lithium battery">
+      <p class="product-title">EOS02B (2.56kWh 12V/24V)</p>
+      <p class="product-desc">Portable storage for light appliance use. Parallel up to 4units.</p>
+    </div>
+
+  </div>
+
+  <!-- CHARGE CONTROLLER -->
+  <h4>Solar Charge Controllers</h4>
+  <div class="image-row">
+
+    <!--<div class="product-card">
+      <img src="ml-series.jpg" alt="SRNE charge controller">
+      <p class="product-title">ML Series</p>
+      <p class="product-desc">Lightweight, durable solar controller.</p>
+    </div>-->
+
+    <div class="product-card">
+      <img src="shiner-series.jpg" alt="Shiner controller">
+      <p class="product-title">Shiner Series</p>
+      <p class="product-desc">Smart MPPT for peak solar tracking. 12V/24V MPPT Solar Controller 20A-60A. Maximum input voltage: 100V with
+heat sink design at the back for cooling</p>
+    </div>
+
+    <!--<div class="product-card">
+      <img src="ma-series.jpg" alt="MA controller">
+      <p class="product-title">MA Series</p>
+      <p class="product-desc">High precision solar regulation system.</p>
+    </div>-->
+
+    <div class="product-card">
+      <img src="mc-series.jpg.jpg" alt="MC controller">
+      <p class="product-title">MC Series</p>
+      <p class="product-desc">Efficient solar management at scale.
+		  12V/24V/36V/48V 100A MPPT Solar Controller.
+		  Maximum input voltage: 250V with heat sink design at the back for cooling
+	  </p>
+    </div>
+
+    <div class="product-card">
+      <img src="mf-series.jpg" alt="MF controller">
+      <p class="product-title">MF Series</p>
+      <p class="product-desc">Reliable external solar charge controller. 12V/24V/36V/48V MPPT Solar Controller.
+		  Available in 60A and 100A with fan cooling.
+	  </p>
+    </div>
+
+  </div>
+
+  <!-- ACCESSORIES -->
+  <h4>Accessories</h4>
+  <div class="image-row">
+
+    <div class="product-card">
+      <img src="solar-panels.jpg" alt="Solar Panel">
+      <p class="product-title">Solar Panels</p>
+      <p class="product-desc">Maximum sunlight conversion, high output. Available in various capacities.</p>
+    </div>
+
+	<div class="product-card">
+      <img src="wifi-dongle.jpg" alt="wi-Fi Dongle">
+      <p class="product-title">wi-Fi Dongle</p>
+      <p class="product-desc">Enables remote monitoring of installed devices from any part of the world.
+	  </p>
+    </div>
+
+    <div class="product-card">
+      <img src="solar-fan.jpg" alt="Rechargeable Fan">
+      <p class="product-title">Rechargeable Fan</p>
+      <p class="product-desc">Portable cooling powered by solar or electricity. 
+		  Comes with solar panels, charger and remote controller.
+	  </p>
+    </div>
+
+    <div class="product-card">
+      <img src="solar-street-light.jpg" alt="Street Light">
+      <p class="product-title">Street Lights</p>
+      <p class="product-desc">Bright outdoor lighting, zero grid use. Available in various capacities.</p>
+    </div>
+
+  </div>
+
+</section>
 <!-- Benefits Section -->
 <div class="benefits">
   <h2>Why HM Solar?</h2>
@@ -221,25 +463,35 @@ footer {
 </div>
 
 <!-- Testimonials & Completed Projects -->
+<section>
 <div class="social-proof">
-  <h2>What Clients Say</h2>
+  <h2>What Our Clients Say</h2>
   <div class="testimonial">You’ve saved me all the power stress. Thank you!</div>
   <div class="testimonial">Fast replies, great support, reliable SRNE products.</div>
   <div class="testimonial">Neat, professional and dependable installation.</div>
-
-  <div class="products-grid" style="margin-top:20px">
-    <img src="project1.jpg" alt="Solar Installation Project">
-    <img src="project2.jpg" alt="Solar Installation Project">
-    <img src="project3.jpg" alt="Solar Installation Project">
-    <img src="project4.jpg" alt="Solar Installation Project">
   </div>
-</div>
+</section>
+
+<section>
+  <h2 class="center">Completed Installation Projects</h2>
+
+  <div class="image-row">
+    <img src="project1.jpg" alt="Installation Project">
+    <img src="project2.jpg" alt="Installation Project">
+  </div>
+
+  <div class="image-row">
+    <img src="project3.jpg" alt="Installation Project">
+    <img src="project4.jpg" alt="Installation Project">
+  </div>
+</section>
+
 
 <!-- Sales Rep Section -->
 <div class="about-rep">
   <h2>Meet Your Sales Rep</h2>
-  <img src="chigozie.jpg" alt="Chigozie Cosmos Oziri" style="width:150px;border-radius:50%;margin-top:10px;">
-  <p>Hi, I’m your dedicated HM Solar contact. I’ll guide you from quote to setup and after-sales support.</p>
+  <img src="chigozie.jpg" alt="Chigozie Cosmos Oziri" style="width:150px; border-radius:50%; margin-top:10px;">
+  <p>Hi, I am your dedicated HM Solar contact. I’ll guide you from quote/purchase to setup and after-sales support.</p>
 </div>
 
 <!-- Final Call to Action -->
