@@ -52,14 +52,25 @@ header img {
   font-size: 1.2em;
 }
 
+.btn {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
 .cta-btn {
   background-color: #28A745;
   color: #fff;
-  padding: 12px 25px;
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
   display: inline-block;
+  margin-top: 5px;
 }
 
 section, div {
@@ -72,27 +83,80 @@ section, div {
 img {
   vertical-align: middle;
 }
-
+/*
 .slideshow-container {
-  width: 100vw;      /* full screen width */
-  max-width: 100%;   /* override previous limit */
-  position: relative;
+  width: 100vw;      /* full screen width
+  max-width: 100%;   override previous limit
+  position: relative; 
   margin: 0;
   padding: 0;
+} */
+
+/* Force full width slideshow */
+.slideshow-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
 }
 
+/*
 .mySlides {
   display: none;
   position: relative;
 }
 
 .mySlides img {
-  width: 100%;       /* full container width */
-  height: 45vh;      /* optional: makes it hero-sized */
-  object-fit: cover; /* prevents distortion, crops neatly */
+  width: 100%;       /* full container width 
+  height: 45vh;      /* optional: makes it hero-sized
+  object-fit: cover; /* prevents distortion, crops neatly
   display: block;
 }
+*/
 
+/* Each slide */
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 60vh; /* adjust slide height */
+  position: relative;
+}
+
+/* Make slideshow images full width & cover */
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(45%); /* keeps readability high */
+}
+
+/* EXACT MATCH to your HTML class: slide-content */
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  color: white;
+  z-index: 10;
+  padding: 20px;
+}
+
+/* Push button slightly below text */
+.slide-content h1 {
+  font-size: 2.6em;
+  margin-bottom: 12px;
+}
+.slide-content p {
+  font-size: 1.2em;
+  margin-bottom: 22px;
+}
+	  
 .image-row {
   display: flex;
   flex-wrap: wrap;
@@ -114,6 +178,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .product-title {
@@ -139,29 +204,40 @@ img {
   text-align: center;
 }
 
-.btn {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 10px;
+/* Dots fixed to slideshow only – prevents overlap with next section */
+.dots-wrapper {
   width: 100%;
   text-align: center;
+  position: relative;     /* changed from absolute to relative */
+  margin-top: -35px;      /* keeps dots visually hovering slightly on slideshow */
+  z-index: 20;
 }
 
+
+
+section, div:not(.slideshow-container):not(.product-card):not(.dots-wrapper) {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Fully transparent dots (invisible, but clickable & JS-detectable) */
 .dot {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: transparent;  /* fully invisible */
+  border: none;                  /* removes outline */
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: none;              /* optional: removes fade effect */
+  cursor: pointer;               /* optional: still shows pointer on hover */
 }
 
 .active {
-  background-color: #717171;
+  background-color: transparent;  /* active state also invisible */
 }
+
 
 .fade {
   animation-name: fade;
@@ -174,14 +250,17 @@ img {
 }
 
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
+  .mySlides {
+    height: 50vh;
   }
-  .hero h1 {
-    font-size: 2em;
+  .slide-content h1 {
+    font-size: 1.8em;
+  }
+  .slide-content p {
+    font-size: 1em;
   }
 }
+
 
 footer {
   background: #000;
@@ -209,40 +288,39 @@ footer {
 <!-- Slideshow / Hero Section -->
 <div class="slideshow-container">
   <div class="mySlides fade">
-    <img src="solar_home.svg" style="width:100%" alt="Solar Home">
-    <div class="text">
+    <img src="solar_home.svg" alt="Solar Home">
+    <div class="slide-content">
       <h1>Reliable Power, Real Savings</h1>
-      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p></div>
-      <div class="btn"><a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a></div>
-    
+      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p>
+      <a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a>
+    </div>
   </div>
 
   <div class="mySlides fade">
-    <img src="solar_installation.svg" style="width:100%" alt="Solar Installation">
-    <div class="text">
-      <h1>Reliable Power, Real Savings</h1>
-      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p></div>
-    <div class="btn"><a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a></div>
-    
+    <img src="solar_installation.svg" alt="Solar Installation">
+    <div class="slide-content">
+      <h1>Quality products at affordable prices!</h1>
+      <p>Strong, durable, fault-tolerant devices built to ensure maximum customer satisfaction and long-term usage.</p>
+      <a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a>
+    </div>
   </div>
 
   <div class="mySlides fade">
-    <img src="solar_installer.svg" style="width:100%" alt="Solar Installer">
-    <div class="text">
-      <h1>Reliable Power, Real Savings</h1>
-      <p>Fuel-free, silent solar sized for your appliances – installed with complete device setup and long-term support.</p></div>
-      <div class="btn"><a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a></div>
-    
+    <img src="solar_installer.svg" alt="Solar Installer">
+    <div class="slide-content">
+      <h1>Buy directly from the producer.</h1>
+      <p>Enjoy original products, seamless installation and great aftersales support.</p>
+      <a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a>
+    </div>
   </div>
 </div>
 
-<!--
-<div style="text-align:center;margin-top:10px">
+<div class="dots-wrapper">
   <span class="dot"></span>
   <span class="dot"></span>
   <span class="dot"></span>
 </div>
--->
+
 
 <!-- Problem Section -->
 <div class="problem">
