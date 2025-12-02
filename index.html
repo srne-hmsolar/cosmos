@@ -239,7 +239,6 @@ section, div:not(.slideshow-container):not(.product-card):not(.dots-wrapper) {
   background-color: transparent;  /* active state also invisible */
 }
 
-
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -251,6 +250,25 @@ section, div:not(.slideshow-container):not(.product-card):not(.dots-wrapper) {
 }
 
 @media (max-width: 768px) {
+	/* Center logos on mobile only */
+  .header-logo, .logo, .brand-logo { 
+    /* These are fallback selectors in case your class name is any of these */
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 6px !important; /* small gap between logos */
+  }
+
+  .navbar-brand, .logo-container, header div {
+    /* Attempts to target the wrapper holding the logos */
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important; /* centers the logos */
+    align-items: center !important;
+    flex-direction: row !important; /* forces side-by-side, not stacked */
+    text-align: center !important;
+  }
+
   .mySlides {
     height: 50vh;
   }
@@ -261,7 +279,6 @@ section, div:not(.slideshow-container):not(.product-card):not(.dots-wrapper) {
     font-size: 1em;
   }
 }
-
 
 footer {
   background: #000;
@@ -281,9 +298,9 @@ footer {
 </head>
 <body>
 
-<header>
-  <img src="hm-solar-logo.png" alt="HM Solar Logo">
-  <img src="SRNELogo1350x460-nobg-SVG.svg" alt="SRNE Solar Logo">
+<header class="logo-container">
+  <img class="logo" src="hm-solar-logo.png" alt="HM Solar Logo">
+  <img class="logo" src="SRNELogo1350x460-nobg-SVG.svg" alt="SRNE Solar Logo">
 </header>
 
 <!-- Slideshow / Hero Section -->
