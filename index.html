@@ -37,6 +37,39 @@ header img {
     margin: 5px;
 }
 
+/* Sticky Navigation Bar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  z-index: 9999; /* stays above slideshow */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.navbar a:hover {
+  color: #FFA500;
+}
+
+/* Make navbar mobile-friendly */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+  }
+}
+
 .hero {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url('hero-bg.jpg') no-repeat center center/cover;
@@ -281,8 +314,16 @@ footer {
     <img class="logo" src="SRNE_and_HM_Solar_logo.png" alt="SRNE_and_HM_Solar_logo">
   </header>
   
+  <nav class="navbar">
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+  
 <!-- Slideshow / Hero Section -->
-<div class="slideshow-container">
+<div class="slideshow-container" id="home">
   <div class="mySlides fade">
     <img src="solar_home.svg" alt="Solar Home">
     <div class="slide-content">
@@ -330,7 +371,7 @@ footer {
 </div>
 
 <!-- Products Section -->
-<section>
+<section id="products">
   <h2 class="center">Our Products</h2>
 
   <!-- INVERTERS -->
@@ -527,7 +568,10 @@ heat sink design at the back for cooling</p>
   </div>
 
 </section>
-<!-- Benefits Section -->
+
+
+<!-- Testimonials & Completed Projects -->
+<section id="testimonials">
 <div class="benefits">
   <h2>Why HM Solar?</h2>
   <div class="benefits-grid">
@@ -537,8 +581,6 @@ heat sink design at the back for cooling</p>
   </div>
 </div>
 
-<!-- Testimonials & Completed Projects -->
-<section>
 <div class="social-proof">
   <h2>What Our Clients Say</h2>
   <div class="testimonial">You’ve saved me all the power stress. Thank you!</div>
@@ -563,16 +605,18 @@ heat sink design at the back for cooling</p>
 
 
 <!-- Sales Rep Section -->
-<div class="about-rep">
-  <h2>Meet Your Sales Rep</h2>
+<section class="about-rep" id="contact">
+<div>
+  <h2>Meet Your Sales Rep!</h2>
   <img src="chigozie.jpg" alt="Chigozie Cosmos Oziri" style="width:150px; border-radius:50%; margin-top:10px;">
-  <p>Hi, I am your dedicated HM Solar contact. I’ll guide you from quote/purchase to setup and after-sales support.</p>
+  <p>Hi, I am your dedicated HM Solar contact person. Click the <b>"GET A QUOTE"</b> button below to reach me on WhatsApp for any enquiries. I will guide you from quote/purchase to installation and after-sales support. Thank you!</p>
 </div>
 
 <!-- Final Call to Action -->
 <div class="cta" style="text-align:center;">
   <a class="cta-btn" href="https://wa.me/2349035859341?text=I%20need%20a%20solar%20quote%20for%20my%20appliances">GET A QUOTE</a>
 </div>
+</section>
 
 <footer>
   <p>&copy; 2025 HM Solar Co. Ltd. • Powered by SRNE Solar</p>
