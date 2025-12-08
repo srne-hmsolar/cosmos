@@ -147,7 +147,7 @@ img {
 .image-row img {
   width: 230px;        /* keeps images uniform */
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -192,11 +192,12 @@ img {
   z-index: 20;
 }
 
-section, div:not(.slideshow-container):not(.product-card):not(.dots-wrapper) {
+section, div:not(.slideshow-container):not(.product-card):not(.dots-wrapper):not(.mySlides):not(.slide-content) {
   padding: 50px 20px;
   max-width: 1200px;
   margin: auto;
-  border: 1px solid #ccc;
+  border: 0 0 0 1px solid #ccc;
+  border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
@@ -336,20 +337,22 @@ footer {
   <h4>Hybrid Inverters (1.5KW - 12KW, Single-phase & 3-phase)</h4>
 	<p>All our inverters can be monitored remotely, are hybrid (designed with inbuilt solar charge controller), 
 		and can be scaled up by 6units (except for the non-parallel models).
-		They are also compatible with tubular batteries and lithium batteries of other brands.
+		They are also compatible with tubular batteries and lithium batteries of other brands. 
+		They all come with a 2year warranty, except the HESP model that comes with a 5year warranty. 
+		You can use them off-grid or together with the grid.
 	</p>
   <div class="image-row">
 
     <div class="product-card">
       <img src="srne-inverter.jpg" alt="HESP Hybrid Inverter">
       <p class="product-title">HESP Series (6KW/12KW)</p>
-      <p class="product-desc">5-year warranty, offgrid, weatherproof inverter, designed for heavy-duty performance. Available in single-phase & 3-phase.</p>
+      <p class="product-desc">Waterproof, outdoor, high performance inverter. Available in single-phase & 3-phase.</p>
     </div>
 
     <div class="product-card">
       <img src="asp-series.jpg" alt="ASP inverter">
       <p class="product-title">ASP Series (10KW/12KW)</p>
-      <p class="product-desc">Offgrid, indoor inverter. Available in single-phase and 3-phase.</p>
+      <p class="product-desc">Indoor inverter, available in single-phase and 3-phase.</p>
     </div>
 
     <div class="product-card">
