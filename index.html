@@ -39,14 +39,14 @@ header img {
 
 /* Sticky Navigation Bar */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   background: #ffffff;
   display: flex;
   justify-content: center;
   gap: 25px;
   padding: 12px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #CC5500;
   z-index: 9999; /* stays above slideshow */
 }
 
@@ -55,6 +55,7 @@ header img {
   color: #333;
   font-weight: bold;
   font-size: 15px;
+  padding: 2px;
 }
 
 .navbar a:hover {
@@ -100,22 +101,6 @@ header img {
   .category-nav button {
     width: 45%;
   }
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('hero-bg.jpg') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.hero h1 {
-  font-size: 2.5em;
-}
-
-.hero p {
-  font-size: 1.2em;
 }
 
 .btn {
